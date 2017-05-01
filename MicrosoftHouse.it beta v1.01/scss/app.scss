@@ -1,0 +1,387 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+// Fonts ~~
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI"), url("../fonts/SegoeUI/Bold/latest.ttf") format("truetype");
+  font-weight: 400; }
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Light"), url("../fonts/SegoeUI/Light/latest.ttf") format("truetype");
+  font-weight: 100; }
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Semilight"), url("../SegoeUI/Semi Bold/latest.ttf") format("truetype");
+  font-weight: 200; }
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Semibold"), url("../fonts/segoeui/semibold/latest.ttf") format("truetype");
+  font-weight: 600; }
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Bold"), url("../fonts/SegoeUI/Semi Light/latest.ttf") format("truetype");
+  font-weight: 700; }
+
+// start global styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.nav-bar{
+  width: 100%;
+  height: 15vh;
+  position: fixed;
+  z-index: 100;
+  background-color: transparent;
+  .logo{
+    img{
+      width: auto;
+      height:5vh;
+      margin: 5vh 0;
+    }
+  }
+  .container{
+    position: relative;
+  }
+  .buttons-cont{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 15vh;
+    width: 23vw;
+  }
+  .butts{
+    border: 1px solid #fff;
+    padding: 1.5vh 1vw;
+    margin-left: 1vw;
+    float: left;
+    width: 10vw;
+    text-align: center;
+    margin-top: 3.5vh;
+    transition: all ease-in-out 0.5s;
+    &:hover{
+      background-color: #fff;
+      transition: all ease-in-out 0.5s;
+      a{
+        color: #4e4e4e;
+        transition: all ease-in-out 0.5s;
+      }
+    }
+  }
+  a{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #contacts{
+    background-color: #fff;
+    a{
+      color: #4e4e4e;
+    }
+  }
+} // end nav-bar ~~
+
+// start skewed section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.skewed-section{
+  position: relative;
+  .carousel{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  // carousel fade effect ~~
+  .carousel-fade .carousel-inner .item {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  }
+  .carousel-fade .carousel-inner .active {
+    opacity: 1;
+    transition: all linear 0.1s;
+  }
+  .carousel-fade .carousel-inner .active.left,
+  .carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+    transition: all linear 0.1s;
+  }
+  .carousel-fade .carousel-inner .next.left,
+  .carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+    transition: all linear 0.1s;
+  }
+  .carousel-fade .carousel-control {
+    z-index: 2;
+  }
+  // end carousel fade effect ~~
+  .item{
+    position: relative;
+  }
+  .item.active{
+    .carousel-caption{
+      transform: translateX(0);
+      transition: all ease-in-out 0.3s;
+      opacity: 1
+    }
+  }
+  .mask-content{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .loading-bar{
+    height: 1.5vh;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  .item.active{
+    .loading-bar{
+      width: 100vw;
+      transition: all ease-out 6s;
+    }
+  }
+  .image-behind{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/images/02/benvenuti-1.jpg);
+    background-repeat: no-repeat;
+    // background-size: auto 100%;
+    background-position: left -55%;
+    transform: scale3d(1, 1, 1);
+    filter: brightness(85%);
+    animation: imageScale ease-in-out 7s infinite;
+    @keyframes imageScale{
+      0%{
+        transform: scale3d(1, 1, 1);
+      }
+      100%{
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+  }
+  .upper-mask{
+    background-color: $flatCyan;
+    height: 80vh;
+    width: 150vw;
+    position: absolute;
+    top: -35vh;
+    left: -10vw;
+    transform: rotate(-12deg);
+  }
+  .left-mask{
+    background-color: $flatCyan;
+    width: 20%;
+    height: 150vh;
+    position: absolute;
+    top: 0;
+    left: -11vw;
+    transform: rotate(25deg);
+  }
+  .right-mask{
+    background-color: $flatCyan;
+    width: 20%;
+    height: 150vh;
+    position: absolute;
+    top: 0;
+    right: -13vw;
+    transform: rotate(-15deg);
+  }
+
+  .carousel-caption{
+    text-align: left;
+    position: absolute;
+    bottom: 50vh;
+    right: 50vw;
+    left: 10vw;
+    transform: translate(-30%);
+    opacity: 0;
+    h3{
+      font-size: 46px;
+      font-family: 'Segoe UI Light';
+      margin-bottom: 3vh;
+    }
+    a{
+      color: #fff;
+      font-weight: bold;
+    }
+    button{
+      background-color: #fff;
+      border: none;
+      padding: 3.5% 3%;
+      a{
+        color: $flatBlue;
+      }
+    }
+  }
+  #slide-2{
+    .image-behind{
+      background-image: url(/images/02/loft-hero.jpg);
+    }
+    .upper-mask{
+      background-color: $flatRed;
+    }
+    .left-mask{
+      background-color: $flatRed;
+    }
+    .right-mask{
+      background-color: $flatRed;
+    }
+    .carousel-caption{
+      bottom: 46vh;
+    }
+  }
+
+
+  #slide-3{
+    .image-behind{
+      background-image: url(/images/02/mtc-hero.jpg);
+      background-size: 100% auto;
+      background-position: left bottom;
+    }
+    .upper-mask{
+      background-color: $flatGreen;
+    }
+    .left-mask{
+      background-color: $flatGreen;
+    }
+    .right-mask{
+      background-color: $flatGreen;
+    }
+    .carousel-caption{
+      bottom: 46vh;
+    }
+  }
+
+  #slide-4{
+    .image-behind{
+      background-image: url(/images/02/Digital-class.jpg);
+      background-size: 100% auto;
+      background-position: left bottom;
+    }
+    .upper-mask{
+      background-color: $flatOrange;
+    }
+    .left-mask{
+      background-color: $flatOrange;
+    }
+    .right-mask{
+      background-color: $flatOrange;
+    }
+    .carousel-caption{
+      bottom: 42vh;
+    }
+  }
+
+  #slide-5{
+    .image-behind{
+      background-image: url(/images/04/msh-ada-img-evento-1-1440x670.png);
+      background-size: 100% auto;
+      background-position: left 450%;
+    }
+    .upper-mask{
+      background-color: $flatBlue;
+    }
+    .left-mask{
+      background-color: $flatBlue;
+    }
+    .right-mask{
+      background-color: $flatBlue;
+    }
+  }
+
+  .carousel-indicators{
+    bottom: 15%;
+    left: 60vw;
+    width: 40vw;
+    height: 60vh;
+    padding-right: 0.5vw;
+    overflow: hidden;
+
+    li{
+      width: 100%;
+      height: 12vh;
+      border-radius: 0;
+      text-indent: 0;
+      margin: 0;
+      display: block;
+      position: relative;
+      border: none;
+      border-right: 1.5px dotted #fff;
+
+    }
+    .li-cont{
+      height: 100%;
+      width: 100%;
+    }
+    h2{
+      color: #fff;
+      font-family: 'Segoe UI Light';
+      font-size: 50px;
+      text-align: center;
+      margin: 0;
+      height: 100%;
+      transition: all ease-in-out 0.3s;
+      opacity: 0.5;
+    }
+    .floor{
+      font-size: 12px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 10vw;
+      background-color: rgba(0,0,0, 0.3);
+      padding: 0;
+      opacity: 0;
+      transition: all ease-in-out 0.3s;
+      text-align: right;
+      position: absolute;
+      top: 50%;
+      right: -10vw;
+      transform: translateY(-50%);
+    }
+    .square{
+      display: block;
+      width: 10px;
+      height: 10px;
+      transition: all ease-in-out 0.3s;
+      background-color: #fff;
+      position: absolute;
+      right: -0.4vw;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    li.active{
+      background-color: transparent;
+      h2{
+        padding-right: 5vw;
+        transition: all ease-in-out 0.3s;
+        opacity: 1;
+      }
+      .floor{
+        opacity: 1;
+        transition: all ease-in-out 0.3s;
+        padding: 1.8vh 2.5vw;
+        right: -0.5vw;
+      }
+      .square{
+        height: 12vh;
+        width: 0.2vw;
+        transition: all ease-in-out 0.3s;
+        right: -0.1vw;
+      }
+    }
+  }
+} // end skewed section ~~
