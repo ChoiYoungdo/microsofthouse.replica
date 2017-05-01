@@ -140,7 +140,7 @@ li {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-image: url("../../benvenuti-1.jpg");
+    background-image: url("https://raw.githubusercontent.com/ChoiYoungdo/microsofthouse.replica/gh-pages/MicrosoftHouse.it%20beta%20v1.01/images/02/benvenuti-1.jpg");
     background-repeat: no-repeat;
     background-position: left -55%;
     -webkit-transform: scale3d(1, 1, 1);
@@ -219,7 +219,7 @@ li {
       .skewed-section .carousel-caption button a {
         color: #0093D6; }
   .skewed-section #slide-2 .image-behind {
-    background-image: url("images/02/loft-hero.jpg"); }
+    background-image: url("https://raw.githubusercontent.com/ChoiYoungdo/microsofthouse.replica/gh-pages/MicrosoftHouse.it%20beta%20v1.01/images/02/loft-hero.jpg"); }
   .skewed-section #slide-2 .upper-mask {
     background-color: #DA482B; }
   .skewed-section #slide-2 .left-mask {
@@ -229,7 +229,7 @@ li {
   .skewed-section #slide-2 .carousel-caption {
     bottom: 46vh; }
   .skewed-section #slide-3 .image-behind {
-    background-image: url(images/02/mtc-hero.jpg);
+    background-image: url("https://raw.githubusercontent.com/ChoiYoungdo/microsofthouse.replica/gh-pages/MicrosoftHouse.it%20beta%20v1.01/images/02/mtc-hero.jpg");
     background-size: 100% auto;
     background-position: left bottom; }
   .skewed-section #slide-3 .upper-mask {
@@ -253,7 +253,7 @@ li {
   .skewed-section #slide-4 .carousel-caption {
     bottom: 42vh; }
   .skewed-section #slide-5 .image-behind {
-    background-image: url("../04/msh-ada-img-evento-1-1440x670.png");
+    background-image: url("/https://raw.githubusercontent.com/ChoiYoungdo/microsofthouse.replica/gh-pages/MicrosoftHouse.it%20beta%20v1.01/images/04/msh-ada-img-evento-1-1440x670.png");
     background-size: 100% auto;
     background-position: left 450%; }
   .skewed-section #slide-5 .upper-mask {
